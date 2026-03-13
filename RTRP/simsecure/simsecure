@@ -1,0 +1,29 @@
+#!/bin/bash
+# SimSecure - Professional Cybersecurity Command-Line Tool
+# This script allows simsecure to be called from anywhere
+#
+# Installation:
+# 1. Copy this file to /usr/local/bin/simsecure (or ~/bin/simsecure for user-only)
+# 2. Make it executable: chmod +x /usr/local/bin/simsecure
+# 3. Then use: simsecure -ls  (from any directory)
+#
+# Usage:
+#   simsecure -ls                              (List commands)
+#   simsecure password "YourPass#123"          (Test password)
+#   simsecure web https://example.com          (Scan website)
+#   simsecure port example.com                 (Scan ports)
+
+SIMSECURE_PATH="/path/to/simsecure"  # Change this to your simsecure directory
+
+# Try to find simsecure directory
+if [ -f "$SIMSECURE_PATH/simsecure.py" ]; then
+    python3 "$SIMSECURE_PATH/simsecure.py" "$@"
+elif [ -f "/opt/simsecure/simsecure.py" ]; then
+    python3 "/opt/simsecure/simsecure.py" "$@"
+elif [ -f "$HOME/simsecure/simsecure.py" ]; then
+    python3 "$HOME/simsecure/simsecure.py" "$@"
+else
+    echo "Error: SimSecure not found!"
+    echo "Please update SIMSECURE_PATH in this script to point to your simsecure installation"
+    exit 1
+fi

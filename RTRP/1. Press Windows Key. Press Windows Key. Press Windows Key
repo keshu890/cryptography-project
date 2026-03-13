@@ -1,0 +1,26 @@
+1. Press Windows Key
+   ↓
+2. Type: PowerShell
+   ↓
+3. RIGHT-CLICK on "Windows PowerShell"
+   ↓
+4. Select: "Run as Administrator"
+   ↓
+5. Click "Yes" when security prompt appears
+   ↓
+6. In the Admin PowerShell, type:
+   cd C:\Programming\RTRP\simsecure
+   ↓
+7. Type:
+   .\install_global.bat
+   ↓
+8. Wait for success message
+   ↓
+9. Close PowerShell (Alt + F4)
+   ↓
+10. Open NEW PowerShell (regular, not admin)
+    ↓
+11. Type:
+    simsecure -ls
+    ↓
+12. ✅ You should see the command list!
